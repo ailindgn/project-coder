@@ -10,7 +10,7 @@ class PostList(generic.ListView):
 
 class DetailView(generic.DetailView):
   model = Post
-  template_name = "post_detail.html"
+  template_name = 'post_detail.html'
   
   
 class AddPostView(generic.CreateView):
@@ -20,11 +20,19 @@ class AddPostView(generic.CreateView):
 
 
 ##
+############################################3
+
+## pruebas ###
 from django.http import HttpRequest, HttpResponse 
 import random
 from django.template import Context, Template, loader
 
 
+
+def otra_vista(request):
+  return HttpResponse('''
+                      <h1> Este es un título en h1 </h1>
+                      ''')
 
 ## pruebas
 # def numero_random(request):
