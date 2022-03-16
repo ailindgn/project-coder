@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Post, Category
 from django.views import generic
 from .forms import PostForm, UpdateForm
 
@@ -19,6 +19,12 @@ class AddPostView(generic.CreateView):
   form_class = PostForm
   template_name = 'add_post.html'
   # fields = '__all__' ## con el post form ya no va 
+
+class AddCategoryView(generic.CreateView):
+  model = Category
+  #form_class = PostForm
+  template_name = 'add_category.html'
+  fields = '__all__' 
 
 class UpdatePostView(generic.UpdateView):
   model = Post
