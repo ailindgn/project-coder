@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Post
 from django.views import generic
-from .forms import PostForm
+from .forms import PostForm, UpdateForm
 
 # Create your views here.
 
@@ -20,24 +20,7 @@ class AddPostView(generic.CreateView):
   template_name = 'add_post.html'
   # fields = '__all__' ## con el post form ya no va 
 
-
-##
-############################################3
-
-## pruebas ###
-from django.http import HttpRequest, HttpResponse 
-import random
-from django.template import Context, Template, loader
-
-
-
-def otra_vista(request):
-  return HttpResponse('''
-                      <h1> Este es un título en h1 </h1>
-                      ''')
-
-## pruebas
-# def numero_random(request):
-#   numero = random.randrange(15,100)
-#   texto = f'<h1> Este es tu número random: {numero} </h1>'
-#   return HttpResponse(texto)
+class UpdatePostView(generic.UpdateView):
+  model = Post
+  form_class = UpdateForm 
+  template_name = 'update_post.html'

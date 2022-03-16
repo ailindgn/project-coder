@@ -15,3 +15,15 @@ class PostForm (forms.ModelForm):
       'content': forms.Textarea(attrs = {'class' : 'form-control'}), 
       
     }
+
+class UpdateForm (forms.ModelForm):
+  class Meta:
+    model = Post
+    fields = ('title', 'slug', 'content')
+    
+    widget = {
+      'title': forms.TextInput(attrs = {'class' : 'form-control'}), 
+      'slug': forms.TextInput(attrs = {'class' : 'form-control', 'placeholder': 'Este es un identificador único del post, escribe el titulo sin espacios, con guiones' }), 
+      'content': forms.Textarea(attrs = {'class' : 'form-control'}), 
+      
+    }
