@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Post
 from django.views import generic
+from .forms import PostForm
 
 # Create your views here.
 
@@ -15,8 +16,9 @@ class DetailView(generic.DetailView):
   
 class AddPostView(generic.CreateView):
   model = Post
+  form_class = PostForm
   template_name = 'add_post.html'
-  fields = '__all__'
+  # fields = '__all__' ## con el post form ya no va 
 
 
 ##

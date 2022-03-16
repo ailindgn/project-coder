@@ -1,6 +1,4 @@
 
-
-ines (15 sloc)  528 Bytes
 {% extends 'base.html' %} 
 {% block content %}
 
@@ -12,7 +10,7 @@ ines (15 sloc)  528 Bytes
         <form method = 'POST'>
           {% csrf_token %}
           {{form.as_p}}
-          <button>Post</button>
+          <button class = "btn btn-secondary">Post</button>
         </form>
         
       </div>
