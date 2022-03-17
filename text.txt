@@ -1,1 +1,7 @@
 txt para notas, apuntes etc.
+
+
+sidebar para post_detail.html 
+ {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+
+

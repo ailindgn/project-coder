@@ -20,8 +20,8 @@ class PostForm (forms.ModelForm):
     widget = {
       'title': forms.TextInput(attrs = {'class' : 'form-control'}), 
       'slug': forms.TextInput(attrs = {'class' : 'form-control', 'placeholder': 'Este es un identificador único del post, escribe el titulo sin espacios, con guiones' }), 
-      'category': forms.Select(attrs = {'class' : 'form-control'}), 
-      'author': forms.Select(choices = choice_list, attrs = {'class' : 'form-control'}), 
+      'category': forms.Select(choices = choice_list, attrs = {'class' : 'form-control'}), 
+      'author': forms.Select(attrs = {'class' : 'form-control'}), 
       'content': forms.Textarea(attrs = {'class' : 'form-control'}), 
       
     }
