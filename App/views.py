@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Post, Category
 from django.views import generic
 from .forms import PostForm, UpdateForm
+from django.db.models import Q 
+
 
 # Create your views here.
 
@@ -29,4 +31,15 @@ class AddCategoryView(generic.CreateView):
 class UpdatePostView(generic.UpdateView):
   model = Post
   form_class = UpdateForm 
+  #fields = '__all__'
   template_name = 'update_post.html'
+
+
+def search_venues(request):
+  if request.method == "POST":
+    searched = request.POST['searched']
+    venues = Post.objects.filter(title__contains=searched)
+    return render(request, 'search_venues.html', {'searched' : searched, 'venues': venues })
+  
+  else:
+    return render(request, 'search_venues.html', {})

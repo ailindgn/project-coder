@@ -28,6 +28,11 @@
             <a class="nav-link text-black font-weight-bold" href="#">Contact</a>
           </li>
         </ul>
+        <form class="form-inline my-2 my-lg-0" method= POST action = "{% url 'search_venues' %}" >
+          {% csrf_token %}
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Buscar" name="searched">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
       </div>
     </div>
   </nav>

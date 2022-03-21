@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+  <center>
+  {% if searched %}
+    <h1> Has buscado: {{searched}} </h1>
+    <br/>
+    {%for venues in venues %}
+      <a href="{% url 'post_detail' venues.slug %}">  {{ venues }} </a> <br/>
+    {% endfor %}
+
+
+  {% else %}
+    <h1> ¡No has ingresado nada para buscar! </h1>
+  {% endif %}
+  
+
+  </center>
+
+{% endblock content %}

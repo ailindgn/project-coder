@@ -15,7 +15,7 @@ for item in choices:
 class PostForm (forms.ModelForm):
   class Meta:
     model = Post
-    fields = ('title', 'slug', 'category', 'author', 'content')
+    fields = ('title', 'slug', 'category', 'author', 'content', 'status')
     
     widget = {
       'title': forms.TextInput(attrs = {'class' : 'form-control'}), 
@@ -23,18 +23,18 @@ class PostForm (forms.ModelForm):
       'category': forms.Select(choices = choice_list, attrs = {'class' : 'form-control'}), 
       'author': forms.Select(attrs = {'class' : 'form-control'}), 
       'content': forms.Textarea(attrs = {'class' : 'form-control'}), 
-      
+      'status': forms.Select(attrs = {'class' : 'form-control'}),
     }
 
 class UpdateForm (forms.ModelForm):
   class Meta:
     model = Post
-    fields = ('title', 'slug', 'category', 'content')
+    fields = ('title', 'slug', 'category', 'content', 'status')
     
     widget = {
       'title': forms.TextInput(attrs = {'class' : 'form-control'}), 
       'slug': forms.TextInput(attrs = {'class' : 'form-control', 'placeholder': 'Este es un identificador único del post, escribe el titulo sin espacios, con guiones' }), 
       'category': forms.Select(attrs = {'class' : 'form-control'}), 
       'content': forms.Textarea(attrs = {'class' : 'form-control'}), 
-      
+      'status': forms.Select(attrs = {'class' : 'form-control'}),
     }
