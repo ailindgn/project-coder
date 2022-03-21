@@ -43,3 +43,4 @@ def search_venues(request):
   
   else:
     return render(request, 'search_venues.html', {})
+  
