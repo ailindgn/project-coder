@@ -1,6 +1,6 @@
 ¡Hola! 
 
-Somos Agus y Ail+in. Bienvenido a nuestro WIP (Work in Progress)
+Somos Agus y Ailín. Bienvenido a nuestro WIP (Work in Progress)
 
 Nuestro blog está destinado a reviews de pelis, libros y series.
 Primero, al entrar al link del servidor (http://127.0.0.1:8000/) enconrtarás el home.
