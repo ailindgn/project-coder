@@ -20,12 +20,12 @@
 
     <div class="col-md-8 mt-3 left">
       {% for post in post_list %}
-      <div class="card mb-4">
+      <div class="shadow-none card mb-3">
         <div class="card-body">
           <h2 class="card-title">{{ post.title }}</h2> <small>{{post.category}} </small>
           <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | <small> <a href="{% url 'update_post' post.slug  %}"> Editar </a> </small> </p>
           <p class="card-text">{{post.content|slice:":200"}}</p>
-          <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+          <a href="{% url 'post_detail' post.slug  %}" class="btn btn-danger">Read More &rarr;</a>
         </div>
       </div>
       {% endfor %}

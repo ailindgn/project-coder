@@ -6,33 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Bootstrap cdn -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/journal/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cyborg/bootstrap.min.css">
 
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sketchy/bootstrap.min.css"> -->
 </head>
 
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-dark  bg-dark" id="mainNav">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'home' %}">🌐Home🌐</a>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item text-black">
-            <a class="nav-link text-black font-weight-bold" href="#">Reports</a>
-          </li>
-          <li class="nav-item text-black">
-            <a class="nav-link text-black font-weight-bold" href="#">Policy</a>
-          </li>
-          <li class="nav-item text-black">
-            <a class="nav-link text-black font-weight-bold" href="#" >Contact</a>
-          </li>
+          <form class="form-inline my-2 my-lg-0" method= POST action = "{% url 'search_venues' %}" >
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Buscar" name="searched">
+            <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
+          </form>
         </ul>
-        <form class="form-inline my-2 my-lg-0" method= POST action = "{% url 'search_venues' %}" >
-          {% csrf_token %}
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Buscar" name="searched">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+          <li class="nav-item text-black">
+            <a href="https://docs.google.com/presentation/d/14hUS_DSd2B_ig1pMDroe8p5fEXgQ9kjnKDX0__UwqRA/edit#slide=id.gf4d4132a8f_1_32" class="btn btn-secondary">Consignas</a>
+            <a href="https://www.coderhouse.com/online/python" class="btn btn-secondary">Coderhouse - Python</a>
+          </li>
+        
       </div>
     </div>
   </nav>

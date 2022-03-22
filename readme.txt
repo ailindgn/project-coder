@@ -1,6 +1,6 @@
 ¡Hola! 
 
-Somos Agus y Ailín. Bienvenido a nuestro WIP (Work in Progress)
+Somos Agustín Tornati y Ailín Dagnino. Bienvenido a nuestro WIP (Work in Progress)
 
 Nuestro blog está destinado a reviews de pelis, libros y series.
 Primero, al entrar al link del servidor (http://127.0.0.1:8000/) enconrtarás el home.
@@ -20,3 +20,20 @@ Con read more, podrás acceder a la vista detallada del post.
 
 Si quieres buscar un post en particular, el search bar te ayudará con eso. Solamente tipea lo que quieres buscar,
 y podrás seleccionar e ir al post que corresponda a tu búsqueda. 
+
+PD:
+Nos encontramos con algunas dudas en el camino. 
+1. El placeholder del slug no lo logramos hacer aparecer,
+2. Tampoco pudimos hacer que las categorías aparezcan como desplegable 
+(por ej al igual que aparece autor, o status)
+3. Tanto edit como add post, nos lleva a una vista que está creada con un form.as_p . 
+Quisieramos modificar el diseño, con dos opciones:
+- Que quede el titulo del campo a completar, y abajo la caja para ingresar texto
+ó
+- Que las cajas de ingresar texto se extiendan a lo ancho de la página, y que no quede tan pequeño, 
+para evitar la sensación que da de que está como "desordenado".
+Leimos que usando el form.as_p no podría modificarse eso. Es así? Hay otra alternativa?
+
+¿Podrías ayudarnos a solucionar estos tres problemas?
+
+Desde ya, muchas gracias y esperemos que te guste el proyecto!
