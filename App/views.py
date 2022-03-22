@@ -3,7 +3,8 @@ from .models import Post, Category
 from django.views import generic
 from .forms import PostForm, UpdateForm
 from django.db.models import Q 
-
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import AuthenticationForm
 
 # Create your views here.
 
@@ -44,3 +45,32 @@ def search_venues(request):
   else:
     return render(request, 'search_venues.html', {})
   
+#Vista Creada para registrarse en el Blog
+
+def signup(request):
+  
+  if request.method == 'POST':
+         form = AuthenticationForm(request,data=request.post)
+         
+         if form.is_valid():
+               username = form.cleaned_data['username']
+               password = form.cleaned_data['password']
+               
+               user = authenticate(username = username, password = password)
+               
+               if user is not None:
+                  login(request,user)
+                  return render(request, 'index.html',{})
+               else:
+                        return render(request, 'index.html',{'form':form,'Msj':'No se autentico'})
+                
+               
+                
+         else:           
+             return render(request, 'index.html',{'form':form,'Msj':'Incorrecto'})
+   
+     
+  
+  form = AuthenticationForm()
+      
+  return render(request,'inicio_sesion.html',{'form':form, 'msj':''})
