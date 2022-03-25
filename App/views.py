@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from .models import Post, Category
 from django.views import generic
-from .forms import PostForm, UpdateForm
+from .forms import PostForm, UpdateForm, nuestracreacionuser
 from django.db.models import Q 
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from .forms import nuestracreacionuser
 
 # Create your views here.
 
@@ -50,7 +51,7 @@ def search_venues(request):
 def signup(request):
   
   if request.method == 'POST':
-         form = AuthenticationForm(request,data=request.post)
+         form = AuthenticationForm(request,data=request.POST)
          
          if form.is_valid():
                username = form.cleaned_data['username']
@@ -60,7 +61,7 @@ def signup(request):
                
                if user is not None:
                   login(request,user)
-                  return render(request, 'index.html',{})
+                  return render(request, 'index.html',{'msj':'Bienvenido, te logueaste correctamente'})
                else:
                         return render(request, 'index.html',{'form':form,'Msj':'No se autentico'})
                 
@@ -70,7 +71,23 @@ def signup(request):
              return render(request, 'index.html',{'form':form,'Msj':'Incorrecto'})
    
      
+  else: 
+    form = AuthenticationForm()    
+    return render(request,'inicio_sesion.html',{'form':form, 'msj':''})
   
-  form = AuthenticationForm()
+  
+  
+  
+def register(request):
       
-  return render(request,'inicio_sesion.html',{'form':form, 'msj':''})
+      if request.method == 'POST':
+            form = nuestracreacionuser(request.POST)
+            
+            if form.is_valid():
+                 form.save()
+                 return render(request,'index.html', {'msj': f'Se creo el user'})
+            else:
+                 return render(request,'register.html', {'form':form, 'msj':''}) 
+      
+      form = nuestracreacionuser()
+      return render(request,'register.html',{'form':form, 'msj':''})
