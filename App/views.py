@@ -6,8 +6,10 @@ from django.db.models import Q
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from .forms import nuestracreacionuser
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
 
 class PostList(generic.ListView):
   queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -17,7 +19,7 @@ class DetailView(generic.DetailView):
   model = Post
   template_name = 'post_detail.html'
   
-  
+
 class AddPostView(generic.CreateView):
   model = Post
   form_class = PostForm

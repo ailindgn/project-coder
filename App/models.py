@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 # Create your models here.
+# from django.contrib.auth.decorators import login_required
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -15,6 +16,7 @@ class Category(models.Model):
     
   def get_absolute_url(self):
       return reverse('home')
+
 
 class Post(models.Model):
   title = models.CharField(max_length = 200, unique = True)
