@@ -11,7 +11,7 @@ urlpatterns = [
     path('post/edit/<slug:slug>', views.UpdatePostView.as_view(), name= 'update_post'),
     path('add_category/', views.AddCategoryView.as_view(), name = 'add_category'),
     path('search_venues/', views.search_venues, name='search_venues'),
-    path('signup/', views.signup, name='signup'),
+    path('signin/', views.signin, name='signin'),
     path('logout/', LogoutView.as_view(template_name='index.html'), name='logout'),
     path('register/', views.register, name='register'),
     path('edit/', views.edit, name='edit'),

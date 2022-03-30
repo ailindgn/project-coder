@@ -3,7 +3,7 @@ from .models import Post, Category
 from django.views import generic
 from .forms import PostForm, UpdateForm, nuestracreacionuser
 from django.db.models import Q 
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate,logout
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from .forms import nuestracreacionuser, nuestraedicionuser
 from django.contrib.auth.decorators import login_required 
@@ -53,24 +53,23 @@ def search_venues(request):
   
 #Vista Creada para registrarse en el Blog
 
-def signup(request):
+def signin(request):
   
   if request.method == 'POST':
-         form = AuthenticationForm(request,data=request.POST)
-         
-         if form.is_valid():
-               username = form.cleaned_data['username']
-               password = form.cleaned_data['password']
+    form = AuthenticationForm(request,data=request.POST)
+    if form.is_valid():
+      username = form.cleaned_data['username']
+      password = form.cleaned_data['password']
                
-               user = authenticate(username = username, password = password)
+      user = authenticate(username = username, password = password)
                
-               if user is not None:
-                  login(request,user)
-                  return render(request, 'index.html',{'msj':'Bienvenido, te logueaste correctamente'})
-               else:                        
-                    return render(request, 'inicio_sesion.html',{'form':form,'Msj':'No se autentico'})
-         else:           
-             return render(request, 'inicio_sesion.html',{'form':form,'Msj':'No se autentico'})
+      if user is not None:
+        login(request,user)
+        return render(request, 'index.html',{'msj':'Bienvenido, te logueaste correctamente'})
+      else:                        
+        return render(request, 'inicio_sesion.html',{'form':form,'Msj':'No se autentico'})
+    else:           
+      return render(request, 'inicio_sesion.html',{'form':form,'Msj':'No se autentico'})
    
      
   else: 
@@ -95,6 +94,11 @@ def register(request):
       form = nuestracreacionuser()
       return render(request,'register.html',{'form':form, 'msj':''})
 
+def logout(request):
+      logout(request)
+      print("--------------------------")
+      print(request.user.is_authenticated)
+      
 
 @login_required
 def edit(request):
