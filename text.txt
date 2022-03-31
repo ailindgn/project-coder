@@ -10,7 +10,7 @@ para que si estamos registrados, no aparezco el boton para registrarnos!!
      
     <!--   {% else %} -->
 
-      <a class="navbar-brand" href="{% url 'signup' %}">Sign Up</a>
+      <a class="navbar-brand" href="{% url 'signup' %}">Sign in</a>
       <a class="navbar-brand" href="{% url 'register' %}">Register</a>
      <!--    {%endif%} -->
 

@@ -93,11 +93,6 @@ def register(request):
       
       form = nuestracreacionuser()
       return render(request,'register.html',{'form':form, 'msj':''})
-
-def logout(request):
-      logout(request)
-      print("--------------------------")
-      print(request.user.is_authenticated)
       
 
 @login_required
