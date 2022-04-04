@@ -40,3 +40,9 @@ class Post(models.Model):
       return reverse(
         viewname="post_detail", kwargs= {'slug': self.slug} )
   
+  
+# Creacion de Avatar
+class Avatar(models.Model):
+      imagen = models.ImageField(upload_to='avatares', null = True, blank = True)
+      user = models.ForeignKey(User, on_delete=models.CASCADE)
+  

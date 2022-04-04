@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post, Category
+from .models import Avatar, Post, Category
 from django.views import generic
 from .forms import PostForm, UpdateForm, nuestracreacionuser
 from django.db.models import Q 
@@ -8,6 +8,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from .forms import nuestracreacionuser, nuestraedicionuser
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth.mixins import LoginRequiredMixin #loginrequieredmixin a las clase basada en vista que le quiero poner, el mixin siempre debe estar primero 
+from .models import Avatar
 
 # Create your views here.
 
@@ -89,10 +90,10 @@ def register(request):
                  form.save()
                  return render(request,'index.html', {'msj': f'Se creo el user {username}'})
             else:
-                 return render(request,'register.html', {'form':form, 'msj':''}) 
+                 return render(request,'register.html', {'form':form, 'msj':'',}) 
       
       form = nuestracreacionuser()
-      return render(request,'register.html',{'form':form, 'msj':''})
+      return render(request,'register.html',{'form':form, 'msj':'',})
       
 
 @login_required
@@ -121,9 +122,13 @@ def edit(request):
                 
                 return render(request,'index.html',{'msj':'msj'})
           else:
-                return render(request,'edit_user.html',{'form':form, 'msj':''})
+                return render(request,'edit_user.html',{'form':form, 'msj':'',})
           
     form = nuestraedicionuser()
-    return render(request,'edit_user.html',{'form':form, 'msj':''})
+    return render(request,'edit_user.html',{'form':form, 'msj':'',})
           
       
+#def buscar_url_avatar(user):
+  #return Avatar.objects.filter(user=user)[0].imagen.url 
+ 
+# 'user_avatar_url': buscar_url_avatar(request.user)
