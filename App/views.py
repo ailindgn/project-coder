@@ -22,7 +22,7 @@ class DetailView(generic.DetailView):
   template_name = 'post_detail.html'
   
 
-class AddPostView(generic.CreateView):
+class AddPostView(LoginRequiredMixin,generic.CreateView):
   model = Post
   form_class = PostForm
   template_name = 'add_post.html'
@@ -36,7 +36,7 @@ class AddCategoryView(generic.CreateView):
   fields = '__all__' 
 
 
-class UpdatePostView(generic.UpdateView):
+class UpdatePostView(LoginRequiredMixin,generic.UpdateView):
   model = Post
   form_class = UpdateForm 
   #fields = '__all__'
