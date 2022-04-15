@@ -14,10 +14,15 @@
             {% endif %}
 
 
-            <form action='' method='post'> 
+            <form action='' method='post' enctype='multipart/form-data'> 
+          
 
             {%csrf_token%}
             {{form.as_p}}
+            <label> Imagen </label>
+            <input type='file' name='txtimagen' id='txtimagen'> 
+            <br>
+
             <button class ="btn btn-danger"> Register </button>
 
 

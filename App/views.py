@@ -52,6 +52,9 @@ def loggedin(request):
 def loggedout(request):
   return render(request, 'loggedin.html', {'':''})
 
+#def registrado(request):
+ #  return render(request,'registrado.html',{})   
+
 @login_required
 def search_venues(request):
   if request.method == "POST":
@@ -98,7 +101,7 @@ def register(request):
             if form.is_valid():
                  username = form.cleaned_data['username'] 
                  form.save()
-                 return render(request,'index.html', {'msj': f'Se creo el user {username}'})
+                 return render(request,'registrado.html', {'msj': f'Se creo el user {username}'})
             else:
                  return render(request,'register.html', {'form':form, 'msj':'',}) 
       
