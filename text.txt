@@ -1,17 +1,2 @@
 txt para notas, apuntes etc.
 
-
-  
-para que si estamos registrados, no aparezco el boton para registrarnos!!
-
-<!-- {%if request.user.is_authenticated%} -->
-      <a class="navbar-brand" href="{% url 'home' %}">Log Out</a>
-      <a class="navbar-brand" href="{% url 'edit' %}">Edit User</a>
-     
-    <!--   {% else %} -->
-
-      <a class="navbar-brand" href="{% url 'signup' %}">Sign in</a>
-      <a class="navbar-brand" href="{% url 'register' %}">Register</a>
-     <!--    {%endif%} -->
-
-

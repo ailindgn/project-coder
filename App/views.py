@@ -9,7 +9,7 @@ from .forms import nuestracreacionuser, nuestraedicionuser
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth.mixins import LoginRequiredMixin #loginrequieredmixin a las clase basada en vista que le quiero poner, el mixin siempre debe estar primero 
 from .models import Avatar
-
+from django.urls import reverse
 # Create your views here.
 
 
@@ -41,6 +41,16 @@ class UpdatePostView(LoginRequiredMixin,generic.UpdateView):
   form_class = UpdateForm 
   #fields = '__all__'
   template_name = 'update_post.html'
+  
+
+def about_us(request):
+  return render(request, 'about_us.html', {'':''})
+
+def loggedin(request):
+  return render(request, 'loggedin.html', {'':''})
+
+def loggedout(request):
+  return render(request, 'loggedin.html', {'':''})
 
 @login_required
 def search_venues(request):
@@ -66,7 +76,7 @@ def signin(request):
                
       if user is not None:
         login(request,user)
-        return render(request, 'index.html',{'msj':'Bienvenido, te logueaste correctamente'})
+        return render(request, 'loggedin.html')
       else:                        
         return render(request, 'inicio_sesion.html',{'form':form,'Msj':'No se autentico'})
     else:           

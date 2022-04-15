@@ -2,18 +2,30 @@
 
 {% block content %}
 
-    {% if 'msj' %}
+<div class="container">
+    <div class="row">
+      <div class="col-md-7 card mb-4  mt-3 left  top">
+        <div class="card-body">
 
-    {{msj}}
+            {% if 'msj' %}
 
-    {% endif %}
+            {{msj}}
+
+            {% endif %}
 
 
-    <form action='' method='post'> 
+            <form action='' method='post'> 
 
-    {%csrf_token%}
-    {{form.as_p}}
-    <button> Register </button>
+            {%csrf_token%}
+            {{form.as_p}}
+            <button class ="btn btn-danger"> Register </button>
+
+
+        </div>
+    </div>
+  </div>
+</div>
+
 
 {% endblock content %}
 

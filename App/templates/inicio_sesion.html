@@ -2,22 +2,32 @@
 
 {% block content %}
 
-    <h1> Bienvenido </h1>
 
-    {% if 'Msj' %}
+<div class="container">
+    <div class="row">
+      <div class="col-md-7 card mb-4  mt-3 left  top">
+        <div class="card-body">
 
-        {{Msj}}
-    
-    {% endif %}
+        <h1> Bienvenido </h1>
+
+        {% if 'Msj' %}
+
+            {{Msj}}
+        
+        {% endif %}
 
 
-    <form action='' method='post'> 
+        <form action='' method='post'> 
 
-        {%csrf_token%}
-        {{form.as_p}}
-        <button> Sign In </button>
-    </form>
+            {%csrf_token%}
+            {{form.as_p}}
+            <button class ="btn btn-danger"> Sign In </button>
+        </form>
 
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock content %}
 

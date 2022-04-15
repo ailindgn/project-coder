@@ -21,19 +21,18 @@ Con read more, podrás acceder a la vista detallada del post.
 Si quieres buscar un post en particular, el search bar te ayudará con eso. Solamente tipea lo que quieres buscar,
 y podrás seleccionar e ir al post que corresponda a tu búsqueda. 
 
-PD:
-Nos encontramos con algunas dudas en el camino. 
-1. El placeholder del slug no lo logramos hacer aparecer,
-2. Tampoco pudimos hacer que las categorías aparezcan como desplegable 
-(por ej al igual que aparece autor, o status)
-3. Tanto edit como add post, nos lleva a una vista que está creada con un form.as_p . 
-Quisieramos modificar el diseño, con dos opciones:
-- Que quede el titulo del campo a completar, y abajo la caja para ingresar texto
-ó
-- Que las cajas de ingresar texto se extiendan a lo ancho de la página, y que no quede tan pequeño, 
-para evitar la sensación que da de que está como "desordenado".
-Leimos que usando el form.as_p no podría modificarse eso. Es así? Hay otra alternativa?
+También hicimos el log in y el register para limitar el uso de las funcionalidades de la página
 
-¿Podrías ayudarnos a solucionar estos tres problemas?
+PD:
+No logramos hacer funcionar las vistas que queremos después del sign in:
+- Quisieramos que cuando uno toca "edit" o "add post" luego del sign in idealmente lo lleve 
+  a editar o a agregar un post directamente. No logramos modificar eso, con lo que intentamos que lleve 
+  al home, pero solo muestra el about del costado, y no muestra el listado de posts.
+- Del mismo modo con el log out quisieramos que muestre el inicio con todos los posts, y solo
+  muestra el about del costado.
+
+Lo solucionamos redireccionando a una vista que da anuncio del inicio/cierre de sesión y
+redirige al home mediante un botón. Son pasos extra pero está funcional.
+
 
 Desde ya, muchas gracias y esperemos que te guste el proyecto!
