@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %} 
+{% block title %} Elimina tu post {% endblock %}
+{% block content %}
+
+<h1> Elimina tu post... </h1>
+<br/><br/>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 card mb-4  mt-3 left  top">
+      <div class="card-body">
+        <h3> Elimina: {{ post.title }} </h3>
+        <br/>
+        <form method = 'POST'>
+          {% csrf_token %} 
+          <strong> ¿Estás seguro de que quieres eliminar el post? </strong><br/><br/>
+          <button class = "btn btn-secondary">Eliminar Post!</button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %} 

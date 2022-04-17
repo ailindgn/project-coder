@@ -9,7 +9,7 @@ from .forms import nuestracreacionuser, nuestraedicionuser
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth.mixins import LoginRequiredMixin #loginrequieredmixin a las clase basada en vista que le quiero poner, el mixin siempre debe estar primero 
 from .models import Avatar
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 # Create your views here.
 
 
@@ -41,6 +41,10 @@ class UpdatePostView(LoginRequiredMixin,generic.UpdateView):
   form_class = UpdateForm 
   #fields = '__all__'
   template_name = 'update_post.html'
+
+class DeletePostView(LoginRequiredMixin,generic.DeleteView):
+  template_name = 'delete_post.html'
+  success_url = reverse_lazy('home')
   
 
 def about_us(request):
@@ -101,7 +105,7 @@ def register(request):
             if form.is_valid():
                  username = form.cleaned_data['username'] 
                  form.save()
-                 return render(request,'registrado.html', {'msj': f'Se creo el user {username}'})
+                 return render(request,'registered.html', {'msj': f'Se creo el user {username}'})
             else:
                  return render(request,'register.html', {'form':form, 'msj':'',}) 
       
