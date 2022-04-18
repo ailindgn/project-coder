@@ -37,6 +37,7 @@ class AddCategoryView(generic.CreateView):
 
 
 class UpdatePostView(LoginRequiredMixin,generic.UpdateView):
+  model = Post
   form_class = UpdateForm 
   #fields = '__all__'
   template_name = 'update_post.html'
