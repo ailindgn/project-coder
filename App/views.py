@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Avatar, Post, Category
+from .models import Post, Category
 from django.views import generic
 from .forms import PostForm, UpdateForm, nuestracreacionuser
 from django.db.models import Q 
@@ -8,7 +8,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from .forms import nuestracreacionuser, nuestraedicionuser
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth.mixins import LoginRequiredMixin #loginrequieredmixin a las clase basada en vista que le quiero poner, el mixin siempre debe estar primero 
-from .models import Avatar
+#from .models import Avatar
 from django.urls import reverse, reverse_lazy
 # Create your views here.
 
