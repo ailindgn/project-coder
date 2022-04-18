@@ -28,7 +28,7 @@ class Post(models.Model):
   content = models.TextField()
   status = models.IntegerField(choices = STATUS, default = 0)
   category = models.CharField(max_length = 200, default = 'Sin categorizar')
-  imagen = models.ImageField(upload_to='posteos', null=True)
+  imagen = models.ImageField(upload_to='posteos', null=True, blank=True)
   
   class Meta:
       ## Metadata para ordenar posts con django en orden descendiente
