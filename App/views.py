@@ -37,12 +37,12 @@ class AddCategoryView(generic.CreateView):
 
 
 class UpdatePostView(LoginRequiredMixin,generic.UpdateView):
-  model = Post
   form_class = UpdateForm 
   #fields = '__all__'
   template_name = 'update_post.html'
 
 class DeletePostView(LoginRequiredMixin,generic.DeleteView):
+  model = Post
   template_name = 'delete_post.html'
   success_url = reverse_lazy('home')
   

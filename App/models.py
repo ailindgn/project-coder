@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from enum import unique
 from pyexpat import model
 from django.db import models
@@ -27,6 +28,7 @@ class Post(models.Model):
   content = models.TextField()
   status = models.IntegerField(choices = STATUS, default = 0)
   category = models.CharField(max_length = 200, default = 'Sin categorizar')
+  imagen = models.ImageField(upload_to='posteos', null=True)
   
   class Meta:
       ## Metadata para ordenar posts con django en orden descendiente
