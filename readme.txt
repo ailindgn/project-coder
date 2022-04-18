@@ -21,18 +21,6 @@ Con read more, podrás acceder a la vista detallada del post.
 Si quieres buscar un post en particular, el search bar te ayudará con eso. Solamente tipea lo que quieres buscar,
 y podrás seleccionar e ir al post que corresponda a tu búsqueda. 
 
-También hicimos el log in y el register para limitar el uso de las funcionalidades de la página
-
-PD:
-No logramos hacer funcionar las vistas que queremos después del sign in:
-- Quisieramos que cuando uno toca "edit" o "add post" luego del sign in idealmente lo lleve 
-  a editar o a agregar un post directamente. No logramos modificar eso, con lo que intentamos que lleve 
-  al home, pero solo muestra el about del costado, y no muestra el listado de posts.
-- Del mismo modo con el log out quisieramos que muestre el inicio con todos los posts, y solo
-  muestra el about del costado.
-
-Lo solucionamos redireccionando a una vista que da anuncio del inicio/cierre de sesión y
-redirige al home mediante un botón. Son pasos extra pero está funcional.
-
+También hicimos el log in y el register para limitar el uso de las funcionalidades de la página.
 
 Desde ya, muchas gracias y esperemos que te guste el proyecto!
