@@ -44,7 +44,7 @@ class Post(models.Model):
   
   
 # Creacion de Avatar
-class Avatar(models.Model):
-      imagen = models.ImageField(upload_to='avatares', null = True, blank = True)
-      user = models.ForeignKey(User, on_delete=models.CASCADE)
+#class Avatar(models.Model):
+    #  imagen = models.ImageField(upload_to='avatares', null = True, blank = True)
+     # user = models.ForeignKey(User, on_delete=models.CASCADE)
   
