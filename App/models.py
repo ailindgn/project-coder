@@ -4,6 +4,8 @@ from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from ckeditor.fields import RichTextField
+
 # Create your models here.
 #from django.contrib.auth.decorators import login_required
 
@@ -25,7 +27,8 @@ class Post(models.Model):
   author = models.ForeignKey(User, on_delete = models.CASCADE, related_name='blog_posts') #para que si se elimina un autor, elimine todos los posts del autor
   created_on = models.DateTimeField(auto_now_add = True) #día actual
   updated_on = models.DateTimeField(auto_now = True) #el día que se modificó
-  content = models.TextField()
+  content = RichTextField(blank=True,null=True)
+  #content = models.TextField()
   status = models.IntegerField(choices = STATUS, default = 0)
   category = models.CharField(max_length = 200, default = 'Sin categorizar')
   imagen = models.ImageField(upload_to='posteos', null=True, blank=True)

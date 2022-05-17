@@ -6,11 +6,12 @@
 <h1> Edita tu post... </h1>
 <div class="container">
   <div class="row">
-    <div class="col-md-7 card mb-4  mt-3 left  top">
+    <div class="col-md-12 card mb-10  mt-8 left  top">
       <div class="card-body">
         
         <form method = 'POST'>
           {% csrf_token %}
+          {{form.media}}
           {{form.as_p}}
           <button class = "btn btn-secondary">Update</button>
         </form>
