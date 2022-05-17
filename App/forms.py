@@ -46,8 +46,8 @@ class UpdateForm (forms.ModelForm):
 class nuestracreacionuser(UserCreationForm):
       
     email = forms.EmailField()
-    password1 = forms.CharField(label= 'Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label= 'Repeat Password', widget=forms.PasswordInput)
+    password1 = forms.CharField(label= 'Contraseña', widget=forms.PasswordInput)
+    password2 = forms.CharField(label= 'Repetir contraseña', widget=forms.PasswordInput)
   
     class Meta: 
       model = User
@@ -60,10 +60,10 @@ class nuestraedicionuser(forms.Form):
   
     #username = forms.CharField()
     email = forms.EmailField()
-    first_name = forms.CharField(label = 'First Name',max_length=20, required= FALSE)
-    last_name = forms.CharField(label = 'Last Name',max_length=20)
-    password1 = forms.CharField(label= 'Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label= 'Repeat Password', widget=forms.PasswordInput)
+    first_name = forms.CharField(label = 'Primer nombre',max_length=20, required= FALSE)
+    last_name = forms.CharField(label = 'Apellido',max_length=20)
+    password1 = forms.CharField(label= 'Contraseña', widget=forms.PasswordInput)
+    password2 = forms.CharField(label= 'Repetir contraseña', widget=forms.PasswordInput)
     
   
     #class Meta: 

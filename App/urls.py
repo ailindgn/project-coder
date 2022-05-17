@@ -22,6 +22,6 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     #path('registrado/', views.registrado, name='registrado'),
     path('edit/', views.edit, name='edit'),
-    path('post/remove/<slug:slug>', views.DeletePostView.as_view(template_name = 'delete_post.html'), name='delete_post')
-
+    path('post/remove/<slug:slug>', views.DeletePostView.as_view(template_name = 'delete_post.html'), name='delete_post'),
+    #path('<slug:slug>/profile', views.ShowProfilePageView.as_view(), name='show_profile_page'),
 ]

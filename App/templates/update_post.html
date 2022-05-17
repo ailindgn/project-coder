@@ -3,17 +3,17 @@
 {% block title %} Edita tu post {% endblock %}
 {% block content %}
 
-<h1> Edita tu post... </h1>
+
 <div class="container">
   <div class="row">
     <div class="col-md-12 card mb-10  mt-8 left  top">
       <div class="card-body">
-        
+        <h1> Edita tu post... </h1>
         <form method = 'POST' enctype='multipart/form-data'>
           {% csrf_token %}
           {{form.media}}
           {{form.as_p}}
-          <button class = "btn btn-secondary">Update</button>
+          <button class = "btn btn-secondary">Actualizar</button>
         </form>
         
       </div>

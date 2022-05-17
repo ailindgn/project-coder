@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import Post, Category
+from cProfile import Profile
+from django.shortcuts import get_object_or_404, render
+from .models import Post, Category #, Profile
 from django.views import generic
 from .forms import PostForm, UpdateForm, nuestracreacionuser
 from django.db.models import Q 
@@ -146,7 +147,14 @@ def edit(request):
     return render(request,'edit_user.html',{'form':form, 'msj':'',})
           
       
-#def buscar_url_avatar(user):
-  #return Avatar.objects.filter(user=user)[0].imagen.url 
- 
-# 'user_avatar_url': buscar_url_avatar(request.user)
+
+# class ShowProfilePageView(generic.DetailView):
+#   model = Profile
+#   template_name = 'registrarion/user_profile.html'
+  
+#   def get_context_data(self, *args, **kwargs):
+#     users = Profile.objects.all()
+#     context = super(ShowProfilePageView, self).get_context_data(self, **kwargs)
+#     page_user = get_object_or_404(Profile, id=self.kwargs['slug'])
+#     context["page_user"] = page_user
+#     return context
