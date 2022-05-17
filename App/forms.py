@@ -58,7 +58,7 @@ class nuestracreacionuser(UserCreationForm):
 
 class nuestraedicionuser(forms.Form):
   
-    username = forms.CharField()
+    #username = forms.CharField()
     email = forms.EmailField()
     first_name = forms.CharField(label = 'First Name',max_length=20, required= FALSE)
     last_name = forms.CharField(label = 'Last Name',max_length=20)
